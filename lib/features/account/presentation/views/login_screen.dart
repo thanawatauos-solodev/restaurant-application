@@ -31,7 +31,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               TextFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'password test',
+                  hintText: 'password test hello',
                 ),
               ),
               OutlinedButton(
