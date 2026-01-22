@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_application/core/theme/app_colors.dart';
 import 'package:restaurant_application/features/table/presentation/widgets/table_item.dart';
 
 class TableScreen extends StatelessWidget {
@@ -9,13 +10,14 @@ class TableScreen extends StatelessWidget {
     final tables = List.generate(10, (index) => index + 1);
 
     return Scaffold(
+      backgroundColor: AppColors.softWhite,
       appBar: AppBar(title: const Text('จองโต๊ะ'), centerTitle: true),
       body: GridView.builder(
         itemCount: tables.length,
         padding: const EdgeInsets.all(10),
         scrollDirection: .vertical,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+          crossAxisCount: 3,
           mainAxisSpacing: 16,
           crossAxisSpacing: 16,
           childAspectRatio: 3 / 4,

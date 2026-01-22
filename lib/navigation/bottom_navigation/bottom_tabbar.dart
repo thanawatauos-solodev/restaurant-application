@@ -28,24 +28,19 @@ class BottomTabbar extends ConsumerWidget {
     return Scaffold(
       body: tabs[index],
       floatingActionButton: SizedBox(
-        height: 60,
-        width: 60,
         child: FloatingActionButton(
-          backgroundColor: AppColors.amberCleaning,
+          backgroundColor: AppColors.emeraldGreen,
           shape: const CircleBorder(),
           onPressed: () {},
-          child: Text(
-            "+",
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-              fontWeight: .bold,
-              color: AppColors.softWhite,
-            ),
+          child: Align(
+            alignment: AlignmentGeometry.center,
+            child: Icon(Icons.add, size: 30, color: AppColors.softWhite),
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: AppColors.champagneGold,
+        color: AppColors.softWhite,
         shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         height: 60,
@@ -54,7 +49,9 @@ class BottomTabbar extends ConsumerWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             _TabItem(
-              icon: index == 0 ? Icons.table_bar : Icons.table_bar_outlined,
+              icon: index == 0
+                  ? Icons.grid_view_rounded
+                  : Icons.grid_view_outlined,
               label: 'Table',
               onTap: () {
                 onTabItem(0);
@@ -147,12 +144,12 @@ class _TabItemState extends State<_TabItem>
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(widget.icon, color: Colors.black),
+              Icon(widget.icon, color: AppColors.emeraldGreen),
               Expanded(
                 child: Text(
                   widget.label,
-                  style: const TextStyle(
-                    color: Colors.black,
+                  style: TextStyle(
+                    color: AppColors.emeraldGreen,
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
                   ),

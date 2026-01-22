@@ -3,10 +3,10 @@ import 'package:dio/dio.dart';
 class DioClient {
   late final Dio _dio;
 
-  DioClient({required String baseURL}) {
+  DioClient() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: baseURL,
+        baseUrl: '',
         connectTimeout: const Duration(seconds: 15),
         receiveTimeout: const Duration(seconds: 15),
         sendTimeout: const Duration(seconds: 15),

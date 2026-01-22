@@ -45,6 +45,8 @@ dependencies:
   skeletonizer: ^2.1.2
   device_info_plus: ^12.3.0
   flutter_riverpod: ^2.6.0
+  image_picker: ^1.2.1
+  camera: ^0.11.3
 
 dev_dependencies:
   flutter_test:

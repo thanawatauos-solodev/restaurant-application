@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_application/core/config/app_config.dart';
+import 'package:go_router/go_router.dart';
 import 'package:restaurant_application/core/theme/app_colors.dart';
 import 'package:restaurant_application/features/account/presentation/widgets/account_widgets.dart';
+import 'package:restaurant_application/navigation/route/constants/app_paths.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -21,6 +22,7 @@ class AccountScreen extends StatelessWidget {
           mainAxisAlignment: .spaceBetween,
           children: [
             Column(
+              spacing: 10,
               children: [
                 Container(
                   height: 80,
@@ -44,13 +46,27 @@ class AccountScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
 
-                AccountBox(),
-                const SizedBox(height: 10),
-                AccountBox(),
-                const SizedBox(height: 10),
+                AccountBox(
+                  title: 'Manage Account',
+                  icon: Icon(
+                    Icons.account_circle_outlined,
+                    color: AppColors.emeraldGreen,
+                  ),
+                  onTap: () {},
+                ),
+                AccountBox(
+                  title: "Settings",
+                  icon: Icon(Icons.settings_outlined, color: Colors.brown),
+                  onTap: () {},
+                ),
 
-                AccountBox(),
-                const SizedBox(height: 10),
+                AccountBox(
+                  title: "Log Out",
+                  icon: Icon(Icons.logout, color: Colors.red),
+                  onTap: () {
+                    context.go(AppPaths.login);
+                  },
+                ),
               ],
             ),
 

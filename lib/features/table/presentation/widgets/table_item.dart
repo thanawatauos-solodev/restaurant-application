@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_application/core/theme/app_colors.dart';
 
 class TableItem extends StatelessWidget {
   final int number;
@@ -18,7 +19,7 @@ class TableItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: AppColors.softWhite,
       elevation: 3,
       borderRadius: BorderRadius.circular(16),
       child: InkWell(
@@ -74,7 +75,7 @@ class TableItem extends StatelessWidget {
               const Spacer(),
               Center(
                 child: Icon(
-                  Icons.table_bar,
+                  Icons.chair_outlined,
                   size: 40,
                   color: Colors.brown.shade400,
                 ),

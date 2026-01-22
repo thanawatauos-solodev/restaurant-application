@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:restaurant_application/core/theme/app_colors.dart';
 import 'package:restaurant_application/navigation/route/go_route.dart';
 
 class MainApp extends ConsumerStatefulWidget {
@@ -22,7 +23,10 @@ class _MainAppState extends ConsumerState<MainApp> {
     return MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(textTheme: TextTheme(labelSmall: TextStyle())),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.emeraldGreen),
+        textTheme: TextTheme(labelSmall: TextStyle()),
+      ),
       routerConfig: router,
       builder: (context, child) {
         return Scaffold(body: Stack(children: [child!]));
